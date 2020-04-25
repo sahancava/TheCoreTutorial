@@ -18,7 +18,7 @@ namespace TheCoreTutorial
 		// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer("DevConnection"));
+			services.AddDbContext<DatabaseContext>(options=>options.UseSqlServer(@"Server=.\SQLEXPRESS;Database=TheNews;Integrated Security=True;"));
 			services.AddControllersWithViews();
 		}
 
