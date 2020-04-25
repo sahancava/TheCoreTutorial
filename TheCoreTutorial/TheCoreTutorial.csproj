@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200425144142_TheCoreTutorial.Models.DBHandler.DatabaseContext.cs" />
+    <Compile Remove="Migrations\20200425144142_TheCoreTutorial.Models.DBHandler.DatabaseContext.Designer.cs" />
+    <Compile Remove="Migrations\20200425144826_TestTutorial.cs" />
+    <Compile Remove="Migrations\20200425144826_TestTutorial.Designer.cs" />
+    <Compile Remove="Migrations\20200425145610_Authors.cs" />
+    <Compile Remove="Migrations\20200425145610_Authors.Designer.cs" />
+    <Compile Remove="Migrations\20200425145820_Authors.cs" />
+    <Compile Remove="Migrations\20200425145820_Authors.Designer.cs" />
+    <Compile Remove="Migrations\20200425150217_Authors2.cs" />
+    <Compile Remove="Migrations\20200425150217_Authors2.Designer.cs" />
+    <Compile Remove="Migrations\20200425150239_Authors2.cs" />
+    <Compile Remove="Migrations\20200425150239_Authors2.Designer.cs" />
+    <Compile Remove="Migrations\20200425150320_Authors2.cs" />
+    <Compile Remove="Migrations\20200425150320_Authors2.Designer.cs" />
+    <Compile Remove="Migrations\20200425151037_Authors.cs" />
+    <Compile Remove="Migrations\20200425151037_Authors.Designer.cs" />
+    <Compile Remove="Migrations\20200425151123_Authors.cs" />
+    <Compile Remove="Migrations\20200425151123_Authors.Designer.cs" />
+    <Compile Remove="Migrations\20200425152407_Authors2.cs" />
+    <Compile Remove="Migrations\20200425152407_Authors2.Designer.cs" />
+    <Compile Remove="Migrations\20200425153302_Authors22.cs" />
+    <Compile Remove="Migrations\20200425153302_Authors22.Designer.cs" />
+    <Compile Remove="Migrations\20200425153544_Authors222.cs" />
+    <Compile Remove="Migrations\20200425153544_Authors222.Designer.cs" />
+    <Compile Remove="Migrations\20200425154131_Authors2223.cs" />
+    <Compile Remove="Migrations\20200425154131_Authors2223.Designer.cs" />
+    <Compile Remove="Migrations\20200425154201_Authors22232.cs" />
+    <Compile Remove="Migrations\20200425154201_Authors22232.Designer.cs" />
+    <Compile Remove="Migrations\20200425154240_Authors222322.cs" />
+    <Compile Remove="Migrations\20200425154240_Authors222322.Designer.cs" />
+    <Compile Remove="Migrations\20200425154840_Test.cs" />
+    <Compile Remove="Migrations\20200425154840_Test.Designer.cs" />
+    <Compile Remove="Migrations\20200425162012_Test2.cs" />
+    <Compile Remove="Migrations\20200425162012_Test2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FakeData" Version="1.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+  </ItemGroup>
+
+</Project>
