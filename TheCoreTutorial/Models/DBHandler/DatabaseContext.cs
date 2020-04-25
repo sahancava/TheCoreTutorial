@@ -12,7 +12,7 @@ namespace TheCoreTutorial.Models.DBHandler
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=DESKTOP-430LGCE\\SQLEXPRESS;Database=TheNews;Integrated Security=True;").EnableSensitiveDataLogging();
+			optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=TheNews;Integrated Security=True;").EnableSensitiveDataLogging();
 		}
 		public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
 		{

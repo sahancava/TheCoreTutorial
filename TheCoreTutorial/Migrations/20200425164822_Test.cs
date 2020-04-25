@@ -201,9 +201,9 @@ namespace TheCoreTutorial.Migrations
                 columns: new[] { "AuthorID", "AuthorEmail", "AuthorPassword", "AuthorUsername" },
                 values: new object[,]
                 {
-                    { 1, "Hailey.Adam@taobao.co.uk", "t166hmg3", "LeahKenny" },
-                    { 2, "A.Sanders@amazon.co.uk", "4ffpr6m7", "BellaGreen" },
-                    { 3, "Liam.Mclean@bbc.org.uk", "qo9ksupk", "LeahAkhtar" }
+                    { 1, "Zoey.Whitehouse@microsoft.org", "oictuhr8", "EllieMellor" },
+                    { 2, "S.Thorne@baidu.info", "nh4qcqau", "MiaJoyce" },
+                    { 3, "R.Walker@paypal.org", "gpny4f09", "BentleyLindsay" }
                 });
 
             migrationBuilder.InsertData(
@@ -211,9 +211,9 @@ namespace TheCoreTutorial.Migrations
                 columns: new[] { "CategoryID", "CategoryDescription", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Nunc iaculis metus a tristique adipiscing.", "yrxiy77cbfzwej04s2kb" },
-                    { 2, "Pellentesque commodo risus vitae orci pretium tincidunt.", "hy0rgtjvvov1m9z6xp9u" },
-                    { 3, "Fusce scelerisque sapien ornare neque pharetra aliquam.", "78nhsi6pcemutox4iskr" }
+                    { 1, "Phasellus non ante non lectus ullamcorper faucibus id a eros.", "ftwcr6zjt02inzbdgvt6" },
+                    { 2, "Phasellus pharetra leo eu tempor molestie.", "nqrzrk00iz9bg9hqm8e6" },
+                    { 3, "Nunc iaculis metus a tristique adipiscing.", "c4zishb42my9o65o37wu" }
                 });
 
             migrationBuilder.InsertData(
@@ -221,9 +221,9 @@ namespace TheCoreTutorial.Migrations
                 columns: new[] { "CommentID", "CommentBody" },
                 values: new object[,]
                 {
-                    { 1, "Vivamus scelerisque felis sed nisl feugiat, mattis consequat lacus pulvinar." },
-                    { 2, "Integer eu neque at lectus imperdiet tincidunt." },
-                    { 3, "In laoreet justo et condimentum bibendum." }
+                    { 1, "Vivamus et felis ut augue laoreet mollis." },
+                    { 2, "Nullam consectetur enim in sem varius gravida." },
+                    { 3, "Curabitur sed lorem a dui consequat congue." }
                 });
 
             migrationBuilder.InsertData(
@@ -236,9 +236,9 @@ namespace TheCoreTutorial.Migrations
                 columns: new[] { "NewsID", "ImageURL", "IsActive", "NewsBody", "NewsTitle", "NewsViewCount", "PublishDate" },
                 values: new object[,]
                 {
-                    { 1, "theguardian.co", true, "Morbi sit amet libero vitae augue porttitor tempus.", "Nunc ac sem quis augue pharetra volutpat.", 2, new DateTime(1986, 12, 5, 15, 57, 37, 474, DateTimeKind.Unspecified).AddTicks(5647) },
-                    { 2, "yahoo.info", true, "Donec dignissim massa nec urna porttitor facilisis.", "Donec interdum velit a orci consectetur, non mollis diam hendrerit.", 8, new DateTime(1990, 12, 15, 9, 55, 40, 941, DateTimeKind.Unspecified).AddTicks(2020) },
-                    { 3, "stackoverflow.com", true, "Curabitur imperdiet dolor eget volutpat ultrices.", "Nulla a ligula laoreet, viverra purus vel, suscipit enim.", 7, new DateTime(1979, 11, 10, 6, 24, 6, 495, DateTimeKind.Unspecified).AddTicks(8641) }
+                    { 1, "theguardian.co.uk", true, "Nunc ac sem quis augue pharetra volutpat.", "Nullam quis turpis eu urna vehicula ornare vel et enim.", 4, new DateTime(1976, 12, 8, 12, 0, 5, 533, DateTimeKind.Unspecified).AddTicks(7107) },
+                    { 2, "163.net", true, "Nulla malesuada massa eget nunc accumsan placerat.", "Nunc iaculis metus a tristique adipiscing.", 8, new DateTime(2018, 6, 21, 13, 10, 45, 601, DateTimeKind.Unspecified).AddTicks(7570) },
+                    { 3, "ask.org.uk", true, "Suspendisse laoreet ligula ac dolor egestas gravida.", "Phasellus non ante non lectus ullamcorper faucibus id a eros.", 1, new DateTime(1986, 4, 25, 3, 34, 35, 587, DateTimeKind.Unspecified).AddTicks(952) }
                 });
 
             migrationBuilder.InsertData(
@@ -246,9 +246,9 @@ namespace TheCoreTutorial.Migrations
                 columns: new[] { "TagID", "Tag" },
                 values: new object[,]
                 {
-                    { 1, "amsjiism" },
-                    { 2, "mfggcemg" },
-                    { 3, "fhsjosuy" }
+                    { 1, "veutemoo" },
+                    { 2, "fzmkmxko" },
+                    { 3, "osbnmekp" }
                 });
 
             migrationBuilder.InsertData(

@@ -84,23 +84,23 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             AuthorID = 1,
-                            AuthorEmail = "Hailey.Adam@taobao.co.uk",
-                            AuthorPassword = "t166hmg3",
-                            AuthorUsername = "LeahKenny"
+                            AuthorEmail = "Zoey.Whitehouse@microsoft.org",
+                            AuthorPassword = "oictuhr8",
+                            AuthorUsername = "EllieMellor"
                         },
                         new
                         {
                             AuthorID = 2,
-                            AuthorEmail = "A.Sanders@amazon.co.uk",
-                            AuthorPassword = "4ffpr6m7",
-                            AuthorUsername = "BellaGreen"
+                            AuthorEmail = "S.Thorne@baidu.info",
+                            AuthorPassword = "nh4qcqau",
+                            AuthorUsername = "MiaJoyce"
                         },
                         new
                         {
                             AuthorID = 3,
-                            AuthorEmail = "Liam.Mclean@bbc.org.uk",
-                            AuthorPassword = "qo9ksupk",
-                            AuthorUsername = "LeahAkhtar"
+                            AuthorEmail = "R.Walker@paypal.org",
+                            AuthorPassword = "gpny4f09",
+                            AuthorUsername = "BentleyLindsay"
                         });
                 });
 
@@ -129,20 +129,20 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             CategoryID = 1,
-                            CategoryDescription = "Nunc iaculis metus a tristique adipiscing.",
-                            CategoryName = "yrxiy77cbfzwej04s2kb"
+                            CategoryDescription = "Phasellus non ante non lectus ullamcorper faucibus id a eros.",
+                            CategoryName = "ftwcr6zjt02inzbdgvt6"
                         },
                         new
                         {
                             CategoryID = 2,
-                            CategoryDescription = "Pellentesque commodo risus vitae orci pretium tincidunt.",
-                            CategoryName = "hy0rgtjvvov1m9z6xp9u"
+                            CategoryDescription = "Phasellus pharetra leo eu tempor molestie.",
+                            CategoryName = "nqrzrk00iz9bg9hqm8e6"
                         },
                         new
                         {
                             CategoryID = 3,
-                            CategoryDescription = "Fusce scelerisque sapien ornare neque pharetra aliquam.",
-                            CategoryName = "78nhsi6pcemutox4iskr"
+                            CategoryDescription = "Nunc iaculis metus a tristique adipiscing.",
+                            CategoryName = "c4zishb42my9o65o37wu"
                         });
                 });
 
@@ -199,17 +199,17 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             CommentID = 1,
-                            CommentBody = "Vivamus scelerisque felis sed nisl feugiat, mattis consequat lacus pulvinar."
+                            CommentBody = "Vivamus et felis ut augue laoreet mollis."
                         },
                         new
                         {
                             CommentID = 2,
-                            CommentBody = "Integer eu neque at lectus imperdiet tincidunt."
+                            CommentBody = "Nullam consectetur enim in sem varius gravida."
                         },
                         new
                         {
                             CommentID = 3,
-                            CommentBody = "In laoreet justo et condimentum bibendum."
+                            CommentBody = "Curabitur sed lorem a dui consequat congue."
                         });
                 });
 
@@ -288,32 +288,32 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             NewsID = 1,
-                            ImageURL = "theguardian.co",
+                            ImageURL = "theguardian.co.uk",
                             IsActive = true,
-                            NewsBody = "Morbi sit amet libero vitae augue porttitor tempus.",
-                            NewsTitle = "Nunc ac sem quis augue pharetra volutpat.",
-                            NewsViewCount = 2,
-                            PublishDate = new DateTime(1986, 12, 5, 15, 57, 37, 474, DateTimeKind.Unspecified).AddTicks(5647)
+                            NewsBody = "Nunc ac sem quis augue pharetra volutpat.",
+                            NewsTitle = "Nullam quis turpis eu urna vehicula ornare vel et enim.",
+                            NewsViewCount = 4,
+                            PublishDate = new DateTime(1976, 12, 8, 12, 0, 5, 533, DateTimeKind.Unspecified).AddTicks(7107)
                         },
                         new
                         {
                             NewsID = 2,
-                            ImageURL = "yahoo.info",
+                            ImageURL = "163.net",
                             IsActive = true,
-                            NewsBody = "Donec dignissim massa nec urna porttitor facilisis.",
-                            NewsTitle = "Donec interdum velit a orci consectetur, non mollis diam hendrerit.",
+                            NewsBody = "Nulla malesuada massa eget nunc accumsan placerat.",
+                            NewsTitle = "Nunc iaculis metus a tristique adipiscing.",
                             NewsViewCount = 8,
-                            PublishDate = new DateTime(1990, 12, 15, 9, 55, 40, 941, DateTimeKind.Unspecified).AddTicks(2020)
+                            PublishDate = new DateTime(2018, 6, 21, 13, 10, 45, 601, DateTimeKind.Unspecified).AddTicks(7570)
                         },
                         new
                         {
                             NewsID = 3,
-                            ImageURL = "stackoverflow.com",
+                            ImageURL = "ask.org.uk",
                             IsActive = true,
-                            NewsBody = "Curabitur imperdiet dolor eget volutpat ultrices.",
-                            NewsTitle = "Nulla a ligula laoreet, viverra purus vel, suscipit enim.",
-                            NewsViewCount = 7,
-                            PublishDate = new DateTime(1979, 11, 10, 6, 24, 6, 495, DateTimeKind.Unspecified).AddTicks(8641)
+                            NewsBody = "Suspendisse laoreet ligula ac dolor egestas gravida.",
+                            NewsTitle = "Phasellus non ante non lectus ullamcorper faucibus id a eros.",
+                            NewsViewCount = 1,
+                            PublishDate = new DateTime(1986, 4, 25, 3, 34, 35, 587, DateTimeKind.Unspecified).AddTicks(952)
                         });
                 });
 
@@ -370,17 +370,17 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             TagID = 1,
-                            Tag = "amsjiism"
+                            Tag = "veutemoo"
                         },
                         new
                         {
                             TagID = 2,
-                            Tag = "mfggcemg"
+                            Tag = "fzmkmxko"
                         },
                         new
                         {
                             TagID = 3,
-                            Tag = "fhsjosuy"
+                            Tag = "osbnmekp"
                         });
                 });
 
