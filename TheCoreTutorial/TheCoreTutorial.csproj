@@ -43,6 +43,88 @@
     <Compile Remove="Migrations\20200425162231_Test.Designer.cs" />
     <Compile Remove="Migrations\20200425164527_Test2.cs" />
     <Compile Remove="Migrations\20200425164527_Test2.Designer.cs" />
+    <Compile Remove="Migrations\20200425164822_Test.cs" />
+    <Compile Remove="Migrations\20200425164822_Test.Designer.cs" />
+    <Compile Remove="Migrations\20200425233948_test.cs" />
+    <Compile Remove="Migrations\20200425233948_test.Designer.cs" />
+    <Compile Remove="Migrations\20200425234257_test2.cs" />
+    <Compile Remove="Migrations\20200425234257_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200425234538_test22.cs" />
+    <Compile Remove="Migrations\20200425234538_test22.Designer.cs" />
+    <Compile Remove="Migrations\20200425235602_test222.cs" />
+    <Compile Remove="Migrations\20200425235602_test222.Designer.cs" />
+    <Compile Remove="Migrations\20200425235721_test2222.cs" />
+    <Compile Remove="Migrations\20200425235721_test2222.Designer.cs" />
+    <Compile Remove="Migrations\20200425235934_test.cs" />
+    <Compile Remove="Migrations\20200425235934_test.Designer.cs" />
+    <Compile Remove="Migrations\20200426002222_test2.cs" />
+    <Compile Remove="Migrations\20200426002222_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200426002314_test.cs" />
+    <Compile Remove="Migrations\20200426002314_test.Designer.cs" />
+    <Compile Remove="Migrations\20200426004713_test2.cs" />
+    <Compile Remove="Migrations\20200426004713_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200426004829_test.cs" />
+    <Compile Remove="Migrations\20200426004829_test.Designer.cs" />
+    <Compile Remove="Migrations\20200426120726_Test.cs" />
+    <Compile Remove="Migrations\20200426120726_Test.Designer.cs" />
+    <Compile Remove="Migrations\20200426120938_Test2.cs" />
+    <Compile Remove="Migrations\20200426120938_Test2.Designer.cs" />
+    <Compile Remove="Migrations\20200426121031_Test.cs" />
+    <Compile Remove="Migrations\20200426121031_Test.Designer.cs" />
+    <Compile Remove="Migrations\20200426124611_Test2.cs" />
+    <Compile Remove="Migrations\20200426124611_Test2.Designer.cs" />
+    <Compile Remove="Migrations\20200426185427_Test22.cs" />
+    <Compile Remove="Migrations\20200426185427_Test22.Designer.cs" />
+    <Compile Remove="Migrations\20200427150758_deneme.cs" />
+    <Compile Remove="Migrations\20200427150758_deneme.Designer.cs" />
+    <Compile Remove="Migrations\20200427151125_test.cs" />
+    <Compile Remove="Migrations\20200427151125_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427151514_test2.cs" />
+    <Compile Remove="Migrations\20200427151514_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200427151729_test.cs" />
+    <Compile Remove="Migrations\20200427151729_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427151846_test.cs" />
+    <Compile Remove="Migrations\20200427151846_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427152318_test2.cs" />
+    <Compile Remove="Migrations\20200427152318_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200427152555_test.cs" />
+    <Compile Remove="Migrations\20200427152555_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427153203_test.cs" />
+    <Compile Remove="Migrations\20200427153203_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427153527_test.cs" />
+    <Compile Remove="Migrations\20200427153527_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427154032_test.cs" />
+    <Compile Remove="Migrations\20200427154032_test.Designer.cs" />
+    <Compile Remove="Migrations\20200427154633_test.cs" />
+    <Compile Remove="Migrations\20200427154633_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428132003_test.cs" />
+    <Compile Remove="Migrations\20200428132003_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428132252_test2.cs" />
+    <Compile Remove="Migrations\20200428132252_test2.Designer.cs" />
+    <Compile Remove="Migrations\20200428132425_test.cs" />
+    <Compile Remove="Migrations\20200428132425_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428132711_test.cs" />
+    <Compile Remove="Migrations\20200428132711_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428154543_test.cs" />
+    <Compile Remove="Migrations\20200428154543_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428155018_test.cs" />
+    <Compile Remove="Migrations\20200428155018_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428155335_test.cs" />
+    <Compile Remove="Migrations\20200428155335_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428160000_test.cs" />
+    <Compile Remove="Migrations\20200428160000_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428160229_test.cs" />
+    <Compile Remove="Migrations\20200428160229_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428160555_test.cs" />
+    <Compile Remove="Migrations\20200428160555_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428160953_test.cs" />
+    <Compile Remove="Migrations\20200428160953_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428162953_test.cs" />
+    <Compile Remove="Migrations\20200428162953_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428163604_test.cs" />
+    <Compile Remove="Migrations\20200428163604_test.Designer.cs" />
+    <Compile Remove="Migrations\20200428163750_test.cs" />
+    <Compile Remove="Migrations\20200428163750_test.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,7 +135,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.8.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="PagedList" Version="1.17.0" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,216 @@
-﻿
+﻿@using PagedList;
+@model TheCoreTutorial.ViewModels.Home.HomeViewModel
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
+<style>
+	.hasContent {
+		background-color: #fff;
+		border: 1px solid #ced4da;
+		padding: 0.5rem;
+		padding-bottom: 0;
+		margin-top: 1rem;
+	}
+</style>
+<script>
+	window.onload = function () {
+		document.getElementById('livesearch').className = 'asdasdasd';
+	};
+	function showResult(str) {
+		if (str.length < 3) {
+			$("#livesearch").addClass("asdasdasd");
+			$("#livesearch").removeClass("hasContent");
+			document.getElementById("livesearch").innerHTML = "";
+			document.getElementById("livesearch").style.border = "0px";
+			return;
+		}
+		if (str.length == 3) {
+			$("#livesearch").removeClass("asdasdasd");
+			$("#livesearch").addClass("hasContent");
+			return;
+		}
 
-<h1>Index</h1>
+		if (window.XMLHttpRequest) {
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {  // code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				//document.getElementById("livesearch").innerHTML = this.responseText;
+				var field = $("#livesearch");
+				field.empty();
+				var result = JSON.parse(this.responseText);
+				result.forEach(function (e) {
+					var element = `<p>${e.NewsTitle}</p>`;
+					field.append(element);
+				});
+				document.getElementById("livesearch").style.border = "1px solid #A5ACB2";
+			}
+		}
+		xmlhttp.open("GET", "Home/GetQuery?search=" + str, true);
+		xmlhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+		xmlhttp.send();
+	}
+</script>
+<div class="row">
+	<div class="col text-center pt-5" style="padding-top:0rem!important">
+		<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987" target="_blank">
+			<img alt="Porto" class="img-fluid" src="@Url.Content("~/img/blog/blog-ad-3.jpg")" />
+		</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col pt-3">
+		<div class="input-group input-group-lg">
+			<form class="col">
+				<input class="form-control" name="s" id="s" type="text" onkeyup="showResult(this.value)">
+				<div id="livesearch"></div>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="row pt-0">
+	<div class="col">
+		<div class="heading heading-border heading-middle-border heading-middle-border-center heading-border-xl">
+			<h2 class="font-weight-normal" style="background:#f7f7f7;">Latest News<!--<strong class="font-weight-extra-bold">H2</strong>--></h2>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="blog-posts recent-posts">
+			<div class="col-lg-9 order-lg-1" style="max-width:none">
+				<div class="blog-posts">
+					@foreach (var news in Model.News.OrderByDescending(x=>x.PublishDate))
+					{
+						string newsBody = "";
+						<article class="post post-medium">
+							<div class="row mb-3">
+								<div class="col-lg-5" style="max-width:15%">
+									<div class="post-image">
+										<a href="blog-post.html">
+											<img src="@Url.Content("~/img/blog/medium/"+news.ImageURL)" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-9">
+									<div class="post-content">
+										<h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2"><a href="blog-post.html">@news.NewsTitle</a></h2>
+										<p class="mb-0">
+											@{
+												if (news.NewsBody.Length > 600)
+												{
+													<text>
+														@news.NewsBody.Substring(0, 600) ... <a href="blog-post.html" class="btn btn-xs btn-light text-1 text-uppercase text-color-tertiary">Read More</a>
+													</text>
+												}
+												else
+												{
+													<text>
+														@news.NewsBody
+													</text>
+												}
+											}
+											@newsBody
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="post-meta">
+										<span><i class="fa fa-calendar-alt"></i> @news.PublishDate.ToString("dd MMM yyyy") </span>
+										<span>
+											<i class="fa fa-user"></i> By <a href="#">@news.Author.AuthorUsername</a>
+											@*foreach (var author in Model.Authors.Where(a => a.AuthorID == news.NewsID))
+												{
+													<a href="#">
+														@author.AuthorUsername
+													</a>
+												}*@
+										</span>
+										@foreach (var categories in Model.Categories.Where(x => x.Item2.NewsID == news.ID))
+										{
+											<span><i class="fa fa-folder"></i> <a href="#" class="text-danger">@categories.Item1.CategoryName</a></span>
+										}
+										@*foreach (var item in Model.Categories.Where(a => a.CategoryID == news.NewsID))
+											{
+											<span><i class="fa fa-folder"></i> <a href="#" class="text-danger">@item.CategoryName</a></span>
+											}*@
+										@*if (Model.Categories.Count > 0)
+											{
+												foreach (var item in news.NewsCategories.Where(a => a.CategoryID == news.CategoryID))
+												{
+													<span><i class="fa fa-folder"></i> <a href="#" class="text-danger">@category.Categories.CategoryName</a></span>
+												}
+											}
+											else
+											{
+												<span><i class="fa fa-folder"></i> <a href="#" class="text-danger">No Category Assigned</a></span>
+											}
+											@if (Model.Tags.Count > 0)
+											{
+												foreach (var tags in news.TagNews)
+												{
+													<span><i class="fa fa-tag"></i> <a href="#" class="text-success">@tags.Tags.Tag</a></span>
+												}
+											}
+											else
+											{
+												<span><i class="fa fa-tag"></i> <a href="#" class="text-success">0 Tag(s)</a></span>
+												</a>
+																			}*@
+										@foreach (var tags in Model.Tags.Where(x => x.Item2.NewsID == news.ID))
+										{
+											<span><i class="fa fa-tag"></i> <a href="#" class="text-success">@tags.Item1.Tag</a></span>
+										}
+										<span>
+											<i class="fa fa-comments"></i>
+											<a href="#">
 
+												@if (news.Comment.Count() > 0)
+												{
+													<label class="text-color-tertiary">@news.Comment.Count() Comments</label>
+												}
+												else
+												{
+													<label class="text-color-tertiary">No Comment</label>
+												}
+										</span>
+										<span class="d-block d-sm-inline-block float-sm-right mt-3 mt-sm-0"><a href="blog-post.html" class="btn btn-modern btn-secondary mb-2">Read More</a></span>
+									</div>
+								</div>
+							</div>
+						</article>
+					}
+				</div>
+			</div>
+			@*<div class="row">
+					@Html.PagedListPager(Model.News, page => Url.Action("Index", new { page }),
+					new PagedListRenderOptionsBase()
+					{
+						UlElementClasses = new List<string> { "pagination" },
+						ContainerDivClasses = new List<string> { "col text-center" },
+						FunctionToTransformEachPageLink = (liTag, aTag) => { aTag.Attributes.Add("class", "page-link".ToString()); return aTag; },
+						LinkToNextPageFormat = "<i class='fas fa-angle-right'></i>".ToString(),
+						LinkToPreviousPageFormat = "<i class='fas fa-angle-left'></i>".ToString()
+					});
+				</div>*@
+			<div class="row">
+				<div class="col text-center">
+					<ul class="pagination" style="display:inline-flex">
+						<li class="page-item"><a class="page-link" href="#"><i class="fas fa-angle-left"></i></a></li>
+						<li class="page-item active"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<a class="page-link" href="#"><i class="fas fa-angle-right"></i></a>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

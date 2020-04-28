@@ -11,7 +11,7 @@ namespace TheCoreTutorial.Models
     public class Authors
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AuthorID { get; set; }
+        public int ID { get; set; }
         [Required]
         [StringLength(50)]
         public string AuthorUsername { get; set; }
@@ -21,6 +21,5 @@ namespace TheCoreTutorial.Models
         [Required]
         [StringLength(50)]
         public string AuthorPassword { get; set; }
-        public virtual IList<AuthorNews> AuthorNew { get; set; }
     }
 }

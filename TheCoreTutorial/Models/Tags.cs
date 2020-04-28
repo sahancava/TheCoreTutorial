@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace TheCoreTutorial.Models
 {
+	[Table("Tags")]
 	public class Tags
 	{
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public int TagID { get; set; }
+		[ForeignKey("ID")]
+		public int ID { get; set; }
 		public string Tag { get; set; }
-		public virtual IList<TagsNews> TagNews { get; set; }
 	}
 }

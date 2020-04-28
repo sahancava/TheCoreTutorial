@@ -16,6 +16,6 @@ namespace TheCoreTutorial.Models
         public string Description { get; set; }
         [StringLength(500)]
         public string Keywords { get; set; }
-        public int RecordsPerPage { get; set; }
+        public int? RecordsPerPage { get; set; }
     }
 }

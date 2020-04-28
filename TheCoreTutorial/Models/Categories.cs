@@ -11,13 +11,13 @@ namespace TheCoreTutorial.Models
     public class Categories
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CategoryID { get; set; }
+        [ForeignKey("ID")]
+        public int ID { get; set; }
         [StringLength(50)]
         [Required]
         public string CategoryName { get; set; }
         [StringLength(500)]
         [Required]
         public string CategoryDescription { get; set; }
-        public virtual IList<NewsCategory> NewsCategories { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace TheCoreTutorial.Models
     public class News
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int NewsID { get; set; }
+        public int ID { get; set; }
         [StringLength(150), Required]
         public string NewsTitle { get; set; }
         [StringLength(4000), Required]
@@ -27,10 +27,15 @@ namespace TheCoreTutorial.Models
 
 
         //Navigation Properties
-        public virtual IList<NewsCategory> NewsCategories { get; set; }
-        public virtual IList<AuthorNews> AuthorNew { get; set; }
-        public virtual IList<CommentNew> CommentNews { get; set; }
-        public virtual IList<TagsNews> TagNews { get; set; }
+        /*[ForeignKey("CategoryID")]
+        public Categories Category { get; set; }
+        public int CategoryID { get; set; }*/
+
+        [ForeignKey("AuthorID")]
+        public Authors Author { get; set; }
+        public int AuthorID { get; set; }
+        public List<TagsNews> Tags { get; set; }
+        public virtual List<Comments> Comment { get; set; } = new List<Comments>();
 
     }
 }

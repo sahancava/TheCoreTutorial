@@ -12,6 +12,8 @@ namespace TheCoreTutorial.Models
 		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int CommentID { get; set; }
 		public string CommentBody { get; set; }
-		public virtual IList<CommentNew> CommentNews { get; set; }
+		public News News { get; set; }
+		[ForeignKey("NewsID")]
+		public int NewsID { get; set; }
 	}
 }

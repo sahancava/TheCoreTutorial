@@ -19,44 +19,9 @@ namespace TheCoreTutorial.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TheCoreTutorial.Models.AuthorNews", b =>
-                {
-                    b.Property<int>("NewsID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AuthorID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AuthorsAuthorID")
-                        .HasColumnType("int");
-
-                    b.HasKey("NewsID", "AuthorID");
-
-                    b.HasIndex("AuthorsAuthorID");
-
-                    b.ToTable("AuthorNew");
-
-                    b.HasData(
-                        new
-                        {
-                            NewsID = 1,
-                            AuthorID = 1
-                        },
-                        new
-                        {
-                            NewsID = 2,
-                            AuthorID = 2
-                        },
-                        new
-                        {
-                            NewsID = 3,
-                            AuthorID = 3
-                        });
-                });
-
             modelBuilder.Entity("TheCoreTutorial.Models.Authors", b =>
                 {
-                    b.Property<int>("AuthorID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -76,37 +41,58 @@ namespace TheCoreTutorial.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("AuthorID");
+                    b.HasKey("ID");
 
                     b.ToTable("Authors");
 
                     b.HasData(
                         new
                         {
-                            AuthorID = 1,
-                            AuthorEmail = "Zoey.Whitehouse@microsoft.org",
-                            AuthorPassword = "oictuhr8",
-                            AuthorUsername = "EllieMellor"
+                            ID = 1,
+                            AuthorEmail = "J.Blair@gmail.co",
+                            AuthorPassword = "2bbamu5x",
+                            AuthorUsername = "AvaOsborne"
                         },
                         new
                         {
-                            AuthorID = 2,
-                            AuthorEmail = "S.Thorne@baidu.info",
-                            AuthorPassword = "nh4qcqau",
-                            AuthorUsername = "MiaJoyce"
+                            ID = 4,
+                            AuthorEmail = "Isaac.Burrows@sky.info",
+                            AuthorPassword = "8rx7d9yb",
+                            AuthorUsername = "TristanJones"
                         },
                         new
                         {
-                            AuthorID = 3,
-                            AuthorEmail = "R.Walker@paypal.org",
-                            AuthorPassword = "gpny4f09",
-                            AuthorUsername = "BentleyLindsay"
+                            ID = 2,
+                            AuthorEmail = "Ava.Hooper@cnn.co.uk",
+                            AuthorPassword = "ot04r6h3",
+                            AuthorUsername = "ChaseWeaver"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            AuthorEmail = "Hunter.Thomas@yelp.co.uk",
+                            AuthorPassword = "j9jtwiaa",
+                            AuthorUsername = "PiperGiles"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            AuthorEmail = "Joshua.Hilton@163.info",
+                            AuthorPassword = "u6mnz2pn",
+                            AuthorUsername = "BentleyStuart"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            AuthorEmail = "Aaliyah.White@deviantart.net",
+                            AuthorPassword = "p2r0ps81",
+                            AuthorUsername = "NathanielHooper"
                         });
                 });
 
             modelBuilder.Entity("TheCoreTutorial.Models.Categories", b =>
                 {
-                    b.Property<int>("CategoryID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -121,63 +107,46 @@ namespace TheCoreTutorial.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.HasKey("CategoryID");
+                    b.HasKey("ID");
 
                     b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
-                            CategoryID = 1,
-                            CategoryDescription = "Phasellus non ante non lectus ullamcorper faucibus id a eros.",
-                            CategoryName = "ftwcr6zjt02inzbdgvt6"
+                            ID = 1,
+                            CategoryDescription = "CategoryDescription for the CategoryID1",
+                            CategoryName = "Category for the NewsID1"
                         },
                         new
                         {
-                            CategoryID = 2,
-                            CategoryDescription = "Phasellus pharetra leo eu tempor molestie.",
-                            CategoryName = "nqrzrk00iz9bg9hqm8e6"
+                            ID = 4,
+                            CategoryDescription = "CategoryDescription for the CategoryID4",
+                            CategoryName = "Category for the NewsID4"
                         },
                         new
                         {
-                            CategoryID = 3,
-                            CategoryDescription = "Nunc iaculis metus a tristique adipiscing.",
-                            CategoryName = "c4zishb42my9o65o37wu"
-                        });
-                });
-
-            modelBuilder.Entity("TheCoreTutorial.Models.CommentNew", b =>
-                {
-                    b.Property<int>("NewsID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CommentID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CommentsCommentID")
-                        .HasColumnType("int");
-
-                    b.HasKey("NewsID", "CommentID");
-
-                    b.HasIndex("CommentsCommentID");
-
-                    b.ToTable("CommentNews");
-
-                    b.HasData(
-                        new
-                        {
-                            NewsID = 1,
-                            CommentID = 1
+                            ID = 2,
+                            CategoryDescription = "CategoryDescription for the CategoryID2",
+                            CategoryName = "Category for the NewsID2"
                         },
                         new
                         {
-                            NewsID = 2,
-                            CommentID = 2
+                            ID = 5,
+                            CategoryDescription = "CategoryDescription for the CategoryID5",
+                            CategoryName = "Category for the NewsID5"
                         },
                         new
                         {
-                            NewsID = 3,
-                            CommentID = 3
+                            ID = 3,
+                            CategoryDescription = "CategoryDescription for the CategoryID3",
+                            CategoryName = "Category for the NewsID3"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            CategoryDescription = "CategoryDescription for the CategoryID6",
+                            CategoryName = "Category for the NewsID6"
                         });
                 });
 
@@ -191,7 +160,12 @@ namespace TheCoreTutorial.Migrations
                     b.Property<string>("CommentBody")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("NewsID")
+                        .HasColumnType("int");
+
                     b.HasKey("CommentID");
+
+                    b.HasIndex("NewsID");
 
                     b.ToTable("Comments");
 
@@ -199,17 +173,20 @@ namespace TheCoreTutorial.Migrations
                         new
                         {
                             CommentID = 1,
-                            CommentBody = "Vivamus et felis ut augue laoreet mollis."
+                            CommentBody = "Curabitur imperdiet dolor eget volutpat ultrices.",
+                            NewsID = 1
                         },
                         new
                         {
                             CommentID = 2,
-                            CommentBody = "Nullam consectetur enim in sem varius gravida."
+                            CommentBody = "Nunc ac ipsum sed purus consectetur sodales.",
+                            NewsID = 2
                         },
                         new
                         {
                             CommentID = 3,
-                            CommentBody = "Curabitur sed lorem a dui consequat congue."
+                            CommentBody = "Vestibulum in enim nec eros faucibus elementum sed vitae dolor.",
+                            NewsID = 3
                         });
                 });
 
@@ -228,7 +205,7 @@ namespace TheCoreTutorial.Migrations
                         .HasColumnType("nvarchar(500)")
                         .HasMaxLength(500);
 
-                    b.Property<int>("RecordsPerPage")
+                    b.Property<int?>("RecordsPerPage")
                         .HasColumnType("int");
 
                     b.Property<string>("WebSiteAddress")
@@ -252,10 +229,13 @@ namespace TheCoreTutorial.Migrations
 
             modelBuilder.Entity("TheCoreTutorial.Models.News", b =>
                 {
-                    b.Property<int>("NewsID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AuthorID")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
@@ -280,81 +260,140 @@ namespace TheCoreTutorial.Migrations
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("NewsID");
+                    b.HasKey("ID");
+
+                    b.HasIndex("AuthorID");
 
                     b.ToTable("News");
 
                     b.HasData(
                         new
                         {
-                            NewsID = 1,
-                            ImageURL = "theguardian.co.uk",
+                            ID = 1,
+                            AuthorID = 1,
+                            ImageURL = "blog-19.jpg",
                             IsActive = true,
-                            NewsBody = "Nunc ac sem quis augue pharetra volutpat.",
-                            NewsTitle = "Nullam quis turpis eu urna vehicula ornare vel et enim.",
+                            NewsBody = "Maecenas tincidunt leo id nibh vestibulum, in feugiat justo varius.",
+                            NewsTitle = "Duis gravida erat et euismod consequat.",
+                            NewsViewCount = 9,
+                            PublishDate = new DateTime(1989, 12, 16, 0, 35, 27, 851, DateTimeKind.Unspecified).AddTicks(7692)
+                        },
+                        new
+                        {
+                            ID = 4,
+                            AuthorID = 4,
+                            ImageURL = "blog-19.jpg",
+                            IsActive = true,
+                            NewsBody = "Praesent id magna sed massa hendrerit pellentesque ut quis enim.",
+                            NewsTitle = "Sed dignissim augue eget orci vulputate, a pellentesque odio facilisis.",
+                            NewsViewCount = 3,
+                            PublishDate = new DateTime(1986, 6, 17, 17, 31, 4, 36, DateTimeKind.Unspecified).AddTicks(9658)
+                        },
+                        new
+                        {
+                            ID = 2,
+                            AuthorID = 2,
+                            ImageURL = "blog-19.jpg",
+                            IsActive = true,
+                            NewsBody = "Phasellus non ante non lectus ullamcorper faucibus id a eros.",
+                            NewsTitle = "Curabitur sed lorem a dui consequat congue.",
                             NewsViewCount = 4,
-                            PublishDate = new DateTime(1976, 12, 8, 12, 0, 5, 533, DateTimeKind.Unspecified).AddTicks(7107)
+                            PublishDate = new DateTime(1988, 11, 21, 22, 54, 32, 510, DateTimeKind.Unspecified).AddTicks(5019)
                         },
                         new
                         {
-                            NewsID = 2,
-                            ImageURL = "163.net",
+                            ID = 5,
+                            AuthorID = 5,
+                            ImageURL = "blog-19.jpg",
                             IsActive = true,
-                            NewsBody = "Nulla malesuada massa eget nunc accumsan placerat.",
-                            NewsTitle = "Nunc iaculis metus a tristique adipiscing.",
-                            NewsViewCount = 8,
-                            PublishDate = new DateTime(2018, 6, 21, 13, 10, 45, 601, DateTimeKind.Unspecified).AddTicks(7570)
+                            NewsBody = "Morbi sit amet nibh eget eros tempor mollis vel nec lacus.",
+                            NewsTitle = "Fusce sollicitudin magna ut risus ullamcorper, ut ullamcorper elit adipiscing.",
+                            NewsViewCount = 3,
+                            PublishDate = new DateTime(1994, 12, 7, 23, 21, 8, 345, DateTimeKind.Unspecified).AddTicks(4607)
                         },
                         new
                         {
-                            NewsID = 3,
-                            ImageURL = "ask.org.uk",
+                            ID = 3,
+                            AuthorID = 3,
+                            ImageURL = "blog-19.jpg",
                             IsActive = true,
-                            NewsBody = "Suspendisse laoreet ligula ac dolor egestas gravida.",
-                            NewsTitle = "Phasellus non ante non lectus ullamcorper faucibus id a eros.",
-                            NewsViewCount = 1,
-                            PublishDate = new DateTime(1986, 4, 25, 3, 34, 35, 587, DateTimeKind.Unspecified).AddTicks(952)
+                            NewsBody = "Curabitur sed lorem a dui consequat congue.",
+                            NewsTitle = "Nunc ac sem quis augue pharetra volutpat.",
+                            NewsViewCount = 6,
+                            PublishDate = new DateTime(1994, 9, 21, 10, 35, 15, 94, DateTimeKind.Unspecified).AddTicks(1488)
+                        },
+                        new
+                        {
+                            ID = 6,
+                            AuthorID = 6,
+                            ImageURL = "blog-19.jpg",
+                            IsActive = true,
+                            NewsBody = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            NewsTitle = "Nullam et tellus posuere, consectetur ante eget, iaculis lorem.",
+                            NewsViewCount = 7,
+                            PublishDate = new DateTime(1976, 8, 5, 8, 19, 12, 966, DateTimeKind.Unspecified).AddTicks(1752)
                         });
                 });
 
             modelBuilder.Entity("TheCoreTutorial.Models.NewsCategory", b =>
                 {
-                    b.Property<int>("NewsID")
-                        .HasColumnType("int");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoriesCategoryID")
+                    b.Property<int>("NewsID")
                         .HasColumnType("int");
 
-                    b.HasKey("NewsID", "CategoryID");
-
-                    b.HasIndex("CategoriesCategoryID");
+                    b.HasKey("ID");
 
                     b.ToTable("NewsCategories");
 
                     b.HasData(
                         new
                         {
-                            NewsID = 1,
-                            CategoryID = 1
+                            ID = 1,
+                            CategoryID = 1,
+                            NewsID = 1
                         },
                         new
                         {
-                            NewsID = 2,
-                            CategoryID = 2
+                            ID = 4,
+                            CategoryID = 4,
+                            NewsID = 4
                         },
                         new
                         {
-                            NewsID = 3,
-                            CategoryID = 3
+                            ID = 2,
+                            CategoryID = 2,
+                            NewsID = 2
+                        },
+                        new
+                        {
+                            ID = 5,
+                            CategoryID = 5,
+                            NewsID = 5
+                        },
+                        new
+                        {
+                            ID = 3,
+                            CategoryID = 3,
+                            NewsID = 3
+                        },
+                        new
+                        {
+                            ID = 6,
+                            CategoryID = 6,
+                            NewsID = 6
                         });
                 });
 
             modelBuilder.Entity("TheCoreTutorial.Models.Tags", b =>
                 {
-                    b.Property<int>("TagID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -362,113 +401,126 @@ namespace TheCoreTutorial.Migrations
                     b.Property<string>("Tag")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TagID");
+                    b.HasKey("ID");
 
                     b.ToTable("Tags");
 
                     b.HasData(
                         new
                         {
-                            TagID = 1,
-                            Tag = "veutemoo"
+                            ID = 1,
+                            Tag = "Tag for the News 1"
                         },
                         new
                         {
-                            TagID = 2,
-                            Tag = "fzmkmxko"
+                            ID = 4,
+                            Tag = "Tag for the News 4"
                         },
                         new
                         {
-                            TagID = 3,
-                            Tag = "osbnmekp"
+                            ID = 2,
+                            Tag = "Tag for the News 2"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Tag = "Tag for the News 5"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Tag = "Tag for the News 3"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Tag = "Tag for the News 6"
                         });
                 });
 
             modelBuilder.Entity("TheCoreTutorial.Models.TagsNews", b =>
                 {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("NewsID")
                         .HasColumnType("int");
 
                     b.Property<int>("TagID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TagsTagID")
-                        .HasColumnType("int");
+                    b.HasKey("ID");
 
-                    b.HasKey("NewsID", "TagID");
-
-                    b.HasIndex("TagsTagID");
+                    b.HasIndex("NewsID");
 
                     b.ToTable("TagNews");
 
                     b.HasData(
                         new
                         {
+                            ID = 1,
                             NewsID = 1,
                             TagID = 1
                         },
                         new
                         {
+                            ID = 4,
+                            NewsID = 4,
+                            TagID = 4
+                        },
+                        new
+                        {
+                            ID = 2,
                             NewsID = 2,
                             TagID = 2
                         },
                         new
                         {
+                            ID = 5,
+                            NewsID = 5,
+                            TagID = 5
+                        },
+                        new
+                        {
+                            ID = 3,
                             NewsID = 3,
                             TagID = 3
+                        },
+                        new
+                        {
+                            ID = 6,
+                            NewsID = 6,
+                            TagID = 6
                         });
                 });
 
-            modelBuilder.Entity("TheCoreTutorial.Models.AuthorNews", b =>
+            modelBuilder.Entity("TheCoreTutorial.Models.Comments", b =>
                 {
-                    b.HasOne("TheCoreTutorial.Models.Authors", "Authors")
-                        .WithMany("AuthorNew")
-                        .HasForeignKey("AuthorsAuthorID");
-
                     b.HasOne("TheCoreTutorial.Models.News", "News")
-                        .WithMany("AuthorNew")
+                        .WithMany("Comment")
                         .HasForeignKey("NewsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TheCoreTutorial.Models.CommentNew", b =>
+            modelBuilder.Entity("TheCoreTutorial.Models.News", b =>
                 {
-                    b.HasOne("TheCoreTutorial.Models.Comments", "Comments")
-                        .WithMany("CommentNews")
-                        .HasForeignKey("CommentsCommentID");
-
-                    b.HasOne("TheCoreTutorial.Models.News", "News")
-                        .WithMany("CommentNews")
-                        .HasForeignKey("NewsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("TheCoreTutorial.Models.NewsCategory", b =>
-                {
-                    b.HasOne("TheCoreTutorial.Models.Categories", "Categories")
-                        .WithMany("NewsCategories")
-                        .HasForeignKey("CategoriesCategoryID");
-
-                    b.HasOne("TheCoreTutorial.Models.News", "News")
-                        .WithMany("NewsCategories")
-                        .HasForeignKey("NewsID")
+                    b.HasOne("TheCoreTutorial.Models.Authors", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("TheCoreTutorial.Models.TagsNews", b =>
                 {
-                    b.HasOne("TheCoreTutorial.Models.News", "News")
-                        .WithMany("TagNews")
+                    b.HasOne("TheCoreTutorial.Models.News", null)
+                        .WithMany("Tags")
                         .HasForeignKey("NewsID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("TheCoreTutorial.Models.Tags", "Tags")
-                        .WithMany("TagNews")
-                        .HasForeignKey("TagsTagID");
                 });
 #pragma warning restore 612, 618
         }

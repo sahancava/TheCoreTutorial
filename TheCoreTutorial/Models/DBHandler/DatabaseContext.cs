@@ -16,15 +16,15 @@ namespace TheCoreTutorial.Models.DBHandler
 		}
 		public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
 		{
-
 		}
 		public DbSet<News> News { get; set; }
 		public DbSet<Categories> Categories { get; set; }
 		public DbSet<NewsCategory> NewsCategories { get; set; }
-		public DbSet<AuthorNews> AuthorNew { get; set; }
-		public DbSet<CommentNew> CommentNews { get; set; }
 		public DbSet<TagsNews> TagNews { get; set; }
 		public DbSet<Config> Config { get; set; }
+		public DbSet<Authors> Authors { get; set; }
+		public DbSet<Tags> Tags { get; set; }
+		public DbSet<Comments> Comments { get; set; }
 		public override int SaveChanges(bool acceptAllChangesOnSuccess)
 		{
 			var serviceProvider = this.GetService<IServiceProvider>();
@@ -55,50 +55,94 @@ namespace TheCoreTutorial.Models.DBHandler
 			{
 				modelBuilder.Entity<Authors>().HasData(new Authors
 				{
-					AuthorID = i,
+					ID = i,
+					AuthorEmail = FakeData.NetworkData.GetEmail(FakeData.NameData.GetFirstName(), FakeData.NameData.GetSurname()),
+					AuthorUsername = FakeData.NameData.GetFirstName() + FakeData.NameData.GetSurname(),
+					AuthorPassword = FakeData.TextData.GetAlphaNumeric(8)
+				});
+				modelBuilder.Entity<Authors>().HasData(new Authors
+				{
+					ID = i+3,
 					AuthorEmail = FakeData.NetworkData.GetEmail(FakeData.NameData.GetFirstName(), FakeData.NameData.GetSurname()),
 					AuthorUsername = FakeData.NameData.GetFirstName() + FakeData.NameData.GetSurname(),
 					AuthorPassword = FakeData.TextData.GetAlphaNumeric(8)
 				});
 				modelBuilder.Entity<News>().HasData(new News
 				{
-					NewsID = i,
+					ID = i,
 					NewsBody = FakeData.TextData.GetSentences(1),
 					NewsTitle = FakeData.TextData.GetSentences(1),
 					NewsViewCount = FakeData.NumberData.GetNumber(1, 10),
 					PublishDate = FakeData.DateTimeData.GetDatetime(),
 					IsActive = true,
-					ImageURL = FakeData.NetworkData.GetDomain()
+					ImageURL = "blog-19.jpg",
+					AuthorID = i
+				});
+				modelBuilder.Entity<News>().HasData(new News
+				{
+					ID = i+3,
+					NewsBody = FakeData.TextData.GetSentences(1),
+					NewsTitle = FakeData.TextData.GetSentences(1),
+					NewsViewCount = FakeData.NumberData.GetNumber(1, 10),
+					PublishDate = FakeData.DateTimeData.GetDatetime(),
+					IsActive = true,
+					ImageURL = "blog-19.jpg",
+					AuthorID = i+3
 				});
 				modelBuilder.Entity<Categories>().HasData(new Categories
 				{
-					CategoryID = i,
-					CategoryName = FakeData.TextData.GetAlphaNumeric(20),
-					CategoryDescription = FakeData.TextData.GetSentences(1)
+					ID = i,
+					CategoryName = "Category for the NewsID" + i,
+					CategoryDescription = "CategoryDescription for the CategoryID" + i
+				});
+				modelBuilder.Entity<Categories>().HasData(new Categories
+				{
+					ID = i+3,
+					CategoryName = "Category for the NewsID" + (i+3),
+					CategoryDescription = "CategoryDescription for the CategoryID" + (i + 3)
 				});
 				modelBuilder.Entity<Comments>().HasData(new Comments
 				{
 					CommentID = i,
-					CommentBody = FakeData.TextData.GetSentences(1)
+					CommentBody = FakeData.TextData.GetSentences(1),
+					NewsID = i
 				});
 				modelBuilder.Entity<Tags>().HasData(new Tags
 				{
-					TagID = i,
-					Tag = FakeData.TextData.GetAlphabetical(8)
+					ID = i,
+					Tag = "Tag for the News " + i
 				});
-
-				modelBuilder.Entity<TagsNews>().HasData(new TagsNews { TagID = i, NewsID = i });
-				modelBuilder.Entity<CommentNew>().HasData(new CommentNew { CommentID = i, NewsID = i });
-				modelBuilder.Entity<NewsCategory>().HasData(new NewsCategory { CategoryID = i, NewsID = i });
-				modelBuilder.Entity<AuthorNews>().HasData(new AuthorNews { AuthorID = i, NewsID = i });
+				modelBuilder.Entity<Tags>().HasData(new Tags
+				{
+					ID = i+3,
+					Tag = "Tag for the News " + (i+3)
+				});
+				modelBuilder.Entity<TagsNews>().HasData(new TagsNews
+				{
+					ID = i,
+					TagID = i,
+					NewsID = i
+				});
+				modelBuilder.Entity<TagsNews>().HasData(new TagsNews
+				{
+					ID = i+3,
+					TagID = i+3,
+					NewsID = i+3
+				});
+				modelBuilder.Entity<NewsCategory>().HasData(new NewsCategory
+				{
+					ID = i,
+					NewsID = i,
+					CategoryID = i
+				});
+				modelBuilder.Entity<NewsCategory>().HasData(new NewsCategory
+				{
+					ID = i+3,
+					NewsID = i+3,
+					CategoryID = i+3
+				});
 			}
-
 			modelBuilder.Entity<Config>().HasData(new Config { ID = 1, WebSiteAddress = "http://localhost", Description = "lorem ipsum", Keywords = "keyword,keyword2", RecordsPerPage = 10 });
-
-			modelBuilder.Entity<NewsCategory>().HasKey(sc => new { sc.NewsID, sc.CategoryID });
-			modelBuilder.Entity<AuthorNews>().HasKey(sc => new { sc.NewsID, sc.AuthorID });
-			modelBuilder.Entity<CommentNew>().HasKey(sc => new { sc.NewsID, sc.CommentID });
-			modelBuilder.Entity<TagsNews>().HasKey(sc => new { sc.NewsID, sc.TagID });
 
 		}
 	}

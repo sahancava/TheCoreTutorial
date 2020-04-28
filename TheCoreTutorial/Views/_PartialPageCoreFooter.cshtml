@@ -1,0 +1,88 @@
+﻿@using TheCoreTutorial.ViewModels.Home
+@model HomeViewModel
+<footer id="footer" class="m-0">
+	<div class="container py-5">
+		<div class="row py-5 my-4">
+			<div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+				<h5 class="text-3 mb-3">ABOUT THE BLOG</h5>
+				@foreach (var item in Model.Configs)
+				{
+					<p>@item.Description</p>
+				}
+			</div>
+			<div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+				<h5 class="text-3 mb-3">RECENT COMMENTS</h5>
+				<ul class="list-unstyled mb-0">
+					@*foreach (var item in Model.News)
+					{
+						foreach (var comment in item.Comment)
+						{
+							int maxLength = 40;
+							string recentComment = "";
+							string recentNewsofComment = "";
+
+							<li class="mb-0">
+								<p class="text-3 text-color-light opacity-8 mb-0">
+									<i class="fa fa-angle-right text-color-primary"></i>
+									"
+									@if (comment.CommentBody.Length > maxLength)
+									{
+										recentComment = comment.CommentBody.Substring(0, maxLength) + "...";
+									}
+									else
+									{
+										recentComment = comment.CommentBody;
+									}
+									@recentComment" on
+									<br />
+									<strong class="text-color-primary">
+										@if (item.NewsTitle.Length > maxLength)
+										{
+											recentNewsofComment = item.NewsTitle.Substring(0, maxLength) + "...";
+										}
+										else
+										{
+											recentNewsofComment = item.NewsTitle;
+										}
+										@recentNewsofComment
+									</strong>
+								</p>
+							</li>
+						}
+					}*@
+				</ul>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<h5 class="text-3 mb-3">NEWSLETTER</h5>
+				<p class="pr-1">Keep up on our always evolving content. Enter your e-mail address and subscribe to our newsletter.</p>
+				<div class="alert alert-success d-none" id="newsletterSuccess">
+					<strong>Success!</strong> You've been added to our email list.
+				</div>
+				<div class="alert alert-danger d-none" id="newsletterError"></div>
+				<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mr-4 mb-3 mb-md-0">
+					<div class="input-group input-group-rounded">
+						<input class="form-control form-control-sm bg-light" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text">
+						<span class="input-group-append">
+							<button class="btn btn-light text-color-dark" type="submit"><strong>GO!</strong></button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="bg-color-dark-scale-2 pt-3">
+	<div class="container py-2">
+		<div class="row py-4">
+			<div class="col text-center">
+				<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light mb-3 mt-2">
+					<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+					<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+					<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+				<p class="text-1"><strong>PORTO TEMPLATE</strong> - © Copyright 2019. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</div>
